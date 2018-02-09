@@ -1,0 +1,49 @@
+{
+  "name": "nicholasboettcher.com",
+  "version": "1.0.0",
+  "description": "A website to show off the dynamic personality of Nicholas Boettcher",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --hot --inline",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/crazyjat/nicholasboettcher.com.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/crazyjat/nicholasboettcher.com/issues"
+  },
+  "homepage": "https://github.com/crazyjat/nicholasboettcher.com#readme",
+  "dependencies": {
+    "angular": "^1.6.9",
+    "angular-location-update": "0.0.2",
+    "angular-route": "^1.6.9",
+    "reset-css": "^2.2.1"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "css-loader": "^0.28.9",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.6",
+    "html-loader": "^0.5.5",
+    "html-webpack-plugin": "^2.30.1",
+    "less": "^2.7.3",
+    "less-loader": "^4.0.5",
+    "less-plugin-autoprefix": "^1.5.1",
+    "path": "^0.12.7",
+    "postcss": "^6.0.17",
+    "postcss-loader": "^2.1.0",
+    "style-loader": "^0.20.1",
+    "text-loader": "0.0.1",
+    "url-loader": "^0.6.2",
+    "webpack": "^3.10.0",
+    "webpack-dev-server": "^2.11.1"
+  }
+}
