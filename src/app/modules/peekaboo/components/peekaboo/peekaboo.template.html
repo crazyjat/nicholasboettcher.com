@@ -1,0 +1,14 @@
+<div class="form-group">
+    <label for="theme.value">Theme</label>
+    <select name="theme" 
+            ng-model="$ctrl.themeIndex" 
+            ng-change="$ctrl.themeChanged()"
+            ng-options="+idx as item.label for (idx, item) in $ctrl.themes"></select>
+</div>
+<div class="peek-a-boo" ng-class="$ctrl.themes[$ctrl.themeIndex].value">
+    <div class="background"></div>
+    <div class="nick">
+        <img src="" id="NickImage" />
+    </div>
+    <div class="foreground"></div>
+</div>

@@ -1,0 +1,226 @@
+peek-a-boo {
+    display: block;
+    height: 100%;
+    position: relative;
+
+    > div.form-group {
+        padding-top: 6px;
+        color: white;
+        text-align: center;
+
+        label {
+            vertical-align: middle;
+            display: inline-block;
+        }
+
+        select {
+            vertical-align: middle;
+            display: inline-block;
+            border-radius: 4px;
+            border: solid black 1px;
+            height: 28px;
+        }
+    }
+
+    &:before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+        clip-path: circle(0vh);
+        z-index: 1;
+    }
+
+    &.animate-start:before {
+        animation: circle-wipe 2.5s ease-out;
+    }
+
+    &:after {
+        content: "";
+        width: 0;
+        height: 0;
+        opacity: 0;
+        background-image: url("../../images/woodpanel.jpg"),
+                          url("../../images/frame_bg.jpg"),
+                          url("../../images/porthole.png"),
+                          url("../../images/ocean.jpg"),
+                          url("../../images/frame.png"),
+                          url("../../images/plane_window.png"),
+                          url("../../images/plane_window_bg.jpg");
+    }
+
+    .background,
+    .nick,
+    .foreground {
+        position: absolute;
+        background-repeat: no-repeat;
+        max-width: calc(100vh ~"-" 40px);
+        max-height: 100vw;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+    }
+
+    > div:nth-of-type(1) {
+        height: 40px;
+    }
+
+    > div:nth-of-type(2) {
+        height: calc(100% ~"-" 40px);
+        position: relative;
+    }
+
+    &.animate .nick img {
+        animation: peek-a-boo 3.5s ease-in-out;
+        animation-delay: 3.5s;
+    }
+
+    .photo-frame {
+        background-color: white;
+
+        .background {
+            background-image: url("../../images/frame_bg.jpg");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nick {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            clip-path: polygon(5% 5%, 95% 5%, 95% 95%, 5% 95%);
+
+            img {
+                opacity: 0;
+                position: absolute;
+                height: 50%;
+                left: 50%;
+                bottom: -26%;
+                transform: translate3d(-50%, 0, 0)
+            }
+        }
+
+        .foreground {
+            background-image: url("../../images/frame.png");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .pirate-nick {
+        background-image: url("../../images/woodpanel.jpg");
+
+        .background {
+            clip-path: circle(32%);
+            background-image: url("../../images/ocean.jpg");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nick {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            clip-path: circle(32%);
+
+            img {
+                opacity: 0;
+                position: absolute;
+                height: 50%;
+                left: 50%;
+                bottom: -32%;
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .foreground {
+            background-image: url("../../images/porthole.png");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .fly-air-nick {
+        background-color: #969696;
+
+        .background {
+            clip-path: polygon(10% 10%, 90% 10%, 90% 90%, 10% 90%);
+            background-image: url("../../images/plane_window_bg.jpg");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+
+        .nick {
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            clip-path: polygon(0% 0%, 100% 0%, 100% 80%, 0% 80%);
+            transform: rotate(270deg) translate3d(50%, -50%, 0);
+
+            img {
+                opacity: 0;
+                position: absolute;
+                height: 50%;
+                left: 53%;
+                bottom: -23%;
+                transform: translate3d(-50%, 0, 0);
+            }
+        }
+
+        .foreground {
+            position: absolute;
+            background-image: url("../../images/plane_window.png");
+            background-position: center;
+            background-size: contain;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    @keyframes peek-a-boo {
+        0% {
+            transform: translate3d(-50%, 0, 0);
+            opacity: 1;
+        }
+
+        35% {
+            transform: translate3d(-50%, -100%, 0);
+        }
+
+        70% {
+            transform: translate3d(-50%, -100%, 0);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translate3d(-50%, 0, 0);
+        }
+    }
+
+    @keyframes circle-wipe {
+        0% {
+            clip-path: circle(5000vh);
+        }
+
+        25% {
+            clip-path: circle(5000vh);
+        }
+
+        100% {
+            clip-path: circle(0vh);
+        }
+    }
+}
